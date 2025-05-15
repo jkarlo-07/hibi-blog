@@ -2,5 +2,7 @@
 @source "../views";
 
 @theme {
-  --color-regal-blue: red; 
+  --color-cyan-teal: #00ADB5; 
+  --color-main: #393E46; 
+  --font-hanken: "Hanken Grotesk", sans-serif; 
 }

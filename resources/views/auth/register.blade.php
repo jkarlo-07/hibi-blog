@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -49,4 +49,22 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</x-guest-layout> --}}
+
+<x-layout>
+    <x-form>
+        <x-page-heading>Welcome to <span class="text-cyan-teal">HibiBlog</span></x-page-heading>
+        <x-section-heading>Create an account</x-section-heading>
+        <x-form-input field="name" label="Full Name" />
+        <x-form-input field="email" label="Email" />
+        <x-form-input field="password" label="Password" type="password" />
+        <x-form-input field="password_confirmation" label="Confirm Password" type="password" />
+        <div>
+            <input type="checkbox" name="agree" id="agree">
+            <label for="agree">I agree to the terms and condition.</label>
+        </div>
+        <x-button-submit>Register</x-button-submit>
+        <p class="text-center">Already have an account? <span class="text-cyan-teal underline"><a href="/login">Sign
+                    In</a></span></p>
+    </x-form>
+</x-layout>

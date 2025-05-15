@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -44,4 +44,20 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</x-guest-layout> --}}
+<x-layout>
+    <x-form action="{{ route('login') }}" class="my-[50px]">
+        <x-page-heading>Welcome back to <span class="text-cyan-teal">HibiBlog</span></x-page-heading>
+        <x-section-heading>Sign in to your account</x-section-heading>
+        <x-form-input field="email" label="Email" />
+        <x-form-input field="password" label="Password" type="password" />
+        <div>
+            <input type="checkbox" name="agree" id="agree">
+            <label for="agree">Remember me</label>
+        </div>
+        <x-button-submit>Log In</x-button-submit>
+        <p class="text-center">Didn't have an account? <span class="text-cyan-teal underline"><a
+                    href="/register">Register</a></span></p>
+    </x-form>
+
+</x-layout>

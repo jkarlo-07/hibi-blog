@@ -1,0 +1,1 @@
+ <button type="submit" class="bg-cyan-teal text-white rounded-md w-full py-[0.5rem]">{{ $slot }}</button>
