@@ -1,0 +1,1 @@
+<a href="#" class="rounded-sm text-sm leading-none py-[0.5rem] px-[1rem] bg-cyan-teal text-white">{{ $slot }}</a>
