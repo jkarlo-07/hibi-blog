@@ -12,9 +12,23 @@
     <section class="mt-[50px]">
         <x-section-heading>Featured Blogs</x-section-heading>
         <div class="flex gap-x-[4rem] gap-y-[2rem] flex-wrap mt-[20px]">
-            @foreach ($posts as $post)
+            @foreach ($featured_posts as $post)
                 <x-blog-card :post="$post" />
             @endforeach
+        </div>
+        <div class="mt-[10px]">
+            <x-arrow-link link="/blogs">View All Posts</x-arrow-link>
+        </div>
+    </section>
+    <section class="mt-[50px]">
+        <x-section-heading>Recent Posts</x-section-heading>
+        <div class="flex flex-col gap-6">
+            @foreach ($recent_posts as $post)
+                <x-blog-card-wide :post="$post" />
+            @endforeach
+        </div>
+        <div class="mt-[10px]">
+            <x-arrow-link link="/blogs">View All Recent Posts</x-arrow-link>
         </div>
     </section>
 </x-layout>

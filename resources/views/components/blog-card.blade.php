@@ -11,7 +11,7 @@
     </div>
     <h4 class="text-2xl font-bold">{{ $post['title'] }}</h4>
     <p>{{ $post->date_uploaded() }} &middot; 11 min read</p>
-    <p>{{ $post['content'] }}</p>
+    <p class="text-gray-600">{{ $post['content'] }}</p>
     <div class="flex gap-3 items-center">
         <img src="https://picsum.photos/seed/{{ rand(0, 10000) }}/300/200" alt=""
             class="w-[42px] h-[42px] object-cover rounded-full">

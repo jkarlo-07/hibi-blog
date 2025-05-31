@@ -5,8 +5,16 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    $posts = Post::with('user')->get();
-    return view('home', compact('posts'));
+    $featured_posts = Post::with('user')
+        ->where('is_featured', true)
+        ->get();
+    
+    $recent_posts = Post::with('user')
+        ->orderBy('created_at', 'desc')
+        ->limit(10)
+        ->get();
+
+    return view('home', compact('featured_posts', 'recent_posts'));
 });
 
 Route::get('/blogs', function () {

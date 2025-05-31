@@ -28,7 +28,17 @@ class PostFactory extends Factory
             'title' => ucfirst($title),
             'content' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nulla deserunt in. Architecto velit nihil nemo at magni maxime aut quis. Modi doloribus officia, soluta sunt at veritatis voluptas iste!",
             'cover_img' => 'https://picsum.photos/seed/' . rand(0, 10000) . '/800/600',
+            'is_featured' => false,
         ];
+    }
+
+    public function featured(): Factory
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'is_featured' => true,
+            ];
+        });
     }
 
     public function configure(): static
