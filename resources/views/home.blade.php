@@ -10,7 +10,7 @@
     </section>
 
     <section class="mt-[50px]">
-        <x-section-heading>Featured Blogs</x-section-heading>
+        <x-section-heading>Featured Posts</x-section-heading>
         <div class="flex gap-x-[4rem] gap-y-[2rem] flex-wrap mt-[20px]">
             @foreach ($featured_posts as $post)
                 <x-blog-card :post="$post" />

@@ -17,14 +17,25 @@
     <header class="flex items-center justify-between px-[150px] py-10">
         <h1 class="text-2xl font-bold">HibiBlog</h1>
         <div class="flex gap-[20px]">
-            <x-nav href="/" :active="request()->is('/')" >Home</x-nav>
-            <x-nav href="/blogs" :active="request()->is('blogs')" >Blogs</x-nav>
-            <x-nav href="/about" :active="request()->is('/about')" >About</x-nav>
-            <x-nav href="/contact" :active="request()->is('/contact')" >Contact</x-nav>
+            <x-nav href="/" :active="request()->is('/')">Home</x-nav>
+            <x-nav href="/posts" :active="request()->is('posts')">Posts</x-nav>
+            <x-nav href="/about" :active="request()->is('about')">About</x-nav>
+            <x-nav href="/contact" :active="request()->is('contact')">Contact</x-nav>
         </div>
         <div class="flex gap-[20px]">
-            <x-nav href="/register" :active="request()->is('register')" >Register</x-nav>
-            <x-nav href="/login" :active="request()->is('login')" >Log In</x-nav>
+            @guest
+                <x-nav href="/register" :active="request()->is('register')">Register</x-nav>
+                <x-nav href="/login" :active="request()->is('login')">Log In</x-nav>
+
+            @endguest
+            @auth
+                <x-nav href="/register">View Profile</x-nav>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="hover:text-cyan-teal transition-colors duration-200 hover:cursor-pointer">Log Out</button>
+                </form>
+
+            @endauth
         </div>
     </header>
     <main class="mx-[150px]">

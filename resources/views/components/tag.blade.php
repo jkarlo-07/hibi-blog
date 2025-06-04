@@ -5,7 +5,7 @@
     if ($size === 'small') {
         $class .= " text-xs py-[0.25rem] px-[0.5rem]";
     } else {
-        $class .= " text-sm py-[0.5rem] px-[1rem]";
+        $class .= " text-sm py-[0.25rem] px-[1rem]";
     }
 @endphp
 

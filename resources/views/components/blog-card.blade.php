@@ -7,9 +7,10 @@
         @foreach ($post->tags as $tag)
             <x-tag>{{ $tag->name }}</x-tag>
         @endforeach
-
     </div>
-    <h4 class="text-2xl font-bold">{{ $post['title'] }}</h4>
+    <a href="/posts/{{ $post->id }}">
+        <h4 class="text-2xl font-bold underline">{{ $post['title'] }}</h4>
+    </a>
     <p>{{ $post->date_uploaded() }} &middot; 11 min read</p>
     <p class="text-gray-600">{{ $post['content'] }}</p>
     <div class="flex gap-3 items-center">
